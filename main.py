@@ -338,10 +338,11 @@ if __name__ == "__main__":
             success, fail = bomb.sms() # Start bombing
         except KeyboardInterrupt: # If user stopped the proccess of bombing
             print(colored("############################\n  Proccess STOPPED by user!", "red"))
+            exit()
         else: # If proccess completed successfully (User did not stop it)
             print(colored("#######################\n  Proccess COMPLETED!\n#######################\n", "green"))
         print(colored(f"Number of successful messages : {success}", "green"))
         print(colored(f"Number of failed messages : {fail}", "red"))
 
-        cont = input("Do you want to restart the proccess ? [Y/n]>>>")
+        cont = input("Do you want to restart the proccess ? [Y/n]>>> ")
         if cont.lower().startswith("n") or cont == "0": start = False
